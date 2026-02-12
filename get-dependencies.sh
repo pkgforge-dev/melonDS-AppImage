@@ -16,7 +16,10 @@ get-debloated-pkgs --add-common
 
 # if you also have to make nightly releases check for DEVEL_RELEASE = 1
 if [ "${DEVEL_RELEASE-}" = 1 ]; then
-	make-aur-package melonds-git
+	package=melonds-git
 else
-	make-aur-package melonds
+	package=melonds
 fi
+
+make-aur-package "$package"
+pacman -Q "$package" | awk '{print $2; exit}' > ~/version
