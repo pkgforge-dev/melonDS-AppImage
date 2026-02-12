@@ -10,10 +10,10 @@ echo "---------------------------------------------------------------"
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
-get-debloated-pkgs --add-common --prefer-nano
+get-debloated-pkgs --add-common
 
 # Comment this out if you need an AUR package
-#make-aur-package PACKAGENAME
+make-aur-package melonDS
 
 # If the application needs to be manually built that has to be done down here
 
